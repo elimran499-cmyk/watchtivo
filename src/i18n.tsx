@@ -30,21 +30,17 @@ const readStoredLang = (): Lang | null => {
   }
 };
 
-const readBrowserLang = (): Lang =>
-  window.navigator.language?.toLowerCase().startsWith('de') ? 'de' : 'nl';
-
 /**
- * Best guess available synchronously, so the first paint is already in a
- * sensible language: an explicit choice wins, then a previously detected
- * country, then the browser preference, then Dutch.
+ * The language shown synchronously on first paint. Dutch is always the
+ * starting point — German appears only for a visitor who explicitly asked for
+ * it or whose IP was resolved to a German-speaking country. The browser's own
+ * locale is deliberately ignored so a German-language browser in the
+ * Netherlands still lands on the Dutch site.
  */
 const readInitialLang = (): Lang => {
   if (typeof window === 'undefined') return 'nl';
   return (
-    readLangFromUrl() ??
-    readStoredLang() ??
-    langFromCountry(readCachedCountry()) ??
-    readBrowserLang()
+    readLangFromUrl() ?? readStoredLang() ?? langFromCountry(readCachedCountry()) ?? 'nl'
   );
 };
 
