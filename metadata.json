@@ -1,0 +1,6 @@
+{
+  "name": "WatchTivo IPTV Streaming Platform",
+  "description": "High-converting, premium light-themed landing page UI/UX for WatchTivo IPTV with 4K HDR live channels, VOD catalog, channel lookup, multi-device support, interactive speed test, and pricing plans.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

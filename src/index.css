@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/*
+ * Brand palette. Layout metrics still follow the live watchtivo.com sheet
+ * (Poppins 17px / #222 body, 50px pill buttons); the accent colour is teal.
+ */
+@theme {
+  --color-wt-teal: #0d9488;
+  --color-wt-teal-dark: #0f766e;
+  --color-wt-teal-tint: #dcf5f1;
+  --color-wt-green: #16a34a;
+  --color-wt-red: #e8342a;
+  --color-wt-ink: #222222;
+  --color-wt-footer: #14b8a6;
+  --font-sans: "Poppins", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Keep jump targets clear of the sticky header. */
+  section[id] {
+    scroll-margin-top: 110px;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #222222;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #222222;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+/* Faint looping line-art that runs down the whole page background */
+.wt-swirl-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wt-swirl-bg svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1600px;
+  height: 100%;
+  opacity: 0.55;
+}
+
+/* Pill button, matching the live site's 50px radius / 700 weight / 15px label */
+.wt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 20px 25px;
+  border-radius: 50px;
+  background-color: #0d9488;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.wt-btn:hover {
+  background-color: #0f766e;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -10px rgba(13, 148, 136, 0.55);
+}
+
+/* Pricing card ------------------------------------------------------- */
+.wt-price-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  overflow: hidden;
+}
+
+.wt-price-outer {
+  background: #ffffff;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+  padding: 26px;
+}
+
+.wt-price-outer--featured {
+  background: #dcf5f1;
+}
+
+.wt-price-feature {
+  border-bottom: 1px solid #ededed;
+}
+
+.wt-price-feature:last-child {
+  border-bottom: 0;
+}
+
+/* Diagonal "% OFF" ribbon in the card's top-right corner */
+.wt-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 116px;
+  height: 116px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wt-ribbon span {
+  position: absolute;
+  top: 24px;
+  right: -34px;
+  width: 160px;
+  background: #e8342a;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  padding: 5px 0;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Feature / step cards ------------------------------------------------ */
+.wt-card {
+  background: #ffffff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wt-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.11);
+}
+
+/* Inline links inside body copy */
+.wt-link {
+  color: #0d9488;
+}
+
+.wt-link:hover {
+  text-decoration: underline;
+}
+
+/* App-badge carousel track */
+.wt-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
