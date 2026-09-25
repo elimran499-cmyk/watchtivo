@@ -15,10 +15,10 @@ import badge9 from '../assets/images/wt-badge-9.png';
 /* WhatsApp ------------------------------------------------------------- */
 
 /** Sales/support number shown to customers. */
-export const WHATSAPP_NUMBER = '+44 7414 662070';
+export const WHATSAPP_NUMBER = '+44 7832 486269';
 
 /** Same number in the digits-only form wa.me expects. */
-const WHATSAPP_DIGITS = '447414662070';
+const WHATSAPP_DIGITS = '447832486269';
 
 /** Builds a wa.me deep link with a pre-filled message. */
 export const whatsappLink = (message: string): string =>
