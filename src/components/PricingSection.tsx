@@ -62,6 +62,7 @@ const PlanCard: React.FC<{ plan: PlanSpec }> = ({ plan }) => {
         </ul>
 
         <a
+          data-cta="order"
           href={whatsappLink(t.whatsapp.plan(name, plan.price))}
           target="_blank"
           rel="noopener noreferrer"
